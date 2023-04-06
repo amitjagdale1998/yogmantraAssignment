@@ -1,0 +1,30 @@
+npm init
+set respiratory (repiratory link)
+install packges- npm i express cors nodemon router dotenv mongoose etc
+create servet.js import necessary library like express,cors,dotenv
+create db folder add create connectiondb.js and save code of mongoose
+create  model folder and craete schema of the required page 
+create router folder and create auth.js here route register and login page code //import here db module and schema and validation here + login time password email compare here 
+
+//password hashing
+https://www.npmjs.com/package/bcryptjs
+npm i bcryptjs   //install this library 
+     basic validation add in routing page 
+     and password encrypting in schema or model page 
+     Login and registring in one page
+//jwt token & stored token in mongodb
+    npm i jsonwebtoken
+    crete authtoken function in schema file after the  password bcrypt 
+    and call the functon between the auth.js(router file of login signup) in the between validation code ex- const isMatch =await bcrypt.compare(password,userLogin.password);
+    //    console.log(isMatch);
+         token= await userLogin.generateAuthToken();
+        console.log(token);
+       if(isMatch)
+       {
+        return res.status(201).json({message:"valid creditials"});
+       }
+       else
+       {
+        return res.status(422).json({error:"invalid creditials"});
+       }     
+    //Store web token in cookies   
